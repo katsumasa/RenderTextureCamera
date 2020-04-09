@@ -1,0 +1,5 @@
+# SimpleSampleRenderTextureCamera
+## 概要
+RenderTextureをCameraのRenderTargetとして使用するSampleです。
+全体の解像度を下げるとユーザーの満足度が下がる為、UIの解像度はそのままで、３Dのみ解像度を下げたい場合等にRenderTextureCameraを使用します。
+具体的には３D用のCameraとUI(2D)用のCameraの2台を用意し、3D用のCameraにRenderTextureCamera.csをアタッチして使用します。
