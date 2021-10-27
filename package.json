@@ -2,13 +2,13 @@
   "name": "com.utj.rendertexturecamera",
   "displayName": "RenderTextureCamera",
   "version": "0.1.0",
-  "unity": "2019.1",
+  "unity": "201.1",
   "keywords": [
     "unity",
     "camera",
     "rendertexture"
   ],
-  "description": "Reduce the rendering resolution for a specific camera.",
+  "description": "A component that dynamically changes the rendering resolution for a particular camera.",
   "dependencies": {},
   "author": {
     "name": "Katsumasa.Kimura",
