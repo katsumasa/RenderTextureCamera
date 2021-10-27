@@ -20,6 +20,8 @@ Dynamic Resolutionの使用サンプルは[こちら](https://github.com/katsuma
 
 ## 使い方
 
+[RenderTextureCamera.cs](https://github.com/katsumasa/RenderTextureCamera/blob/master/Runtime/Scripts/RenderTextureCamera.cs)をレンダリング解像度を変更したいCameraのGameObjectにADDして下さい。
+
 ### renderTextureCamera
 
 レンダリング解像度を下げたいカメラを指定します。
