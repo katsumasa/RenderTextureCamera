@@ -1,9 +1,10 @@
-#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEditor;
+using System.IO;
 
 
 namespace UTJ.RenderTextureCamera
@@ -18,8 +19,8 @@ namespace UTJ.RenderTextureCamera
             var renderTextureCamera = target as RenderTextureCamera;
 
             EditorGUI.BeginChangeCheck();
-            renderTextureCamera.mShift = EditorGUILayout.IntSlider("Shit",renderTextureCamera.shift, 0, 6);
-            renderTextureCamera.mFilterMode = (FilterMode)EditorGUILayout.EnumPopup("FilterMode",renderTextureCamera.mFilterMode);
+            renderTextureCamera.shift = EditorGUILayout.IntSlider("Shit", renderTextureCamera.shift, 0, 6);
+            renderTextureCamera.filterMode = (FilterMode)EditorGUILayout.EnumPopup("FilterMode", renderTextureCamera.filterMode);
 
             if (EditorGUI.EndChangeCheck())
             {

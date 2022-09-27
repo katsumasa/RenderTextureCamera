@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -21,25 +23,24 @@ namespace UTJ.RenderTextureCamera
         [Tooltip("Render TextureのベースにするCamera(2D Camera,Main Camera... etc.")]
         // mainCamera
         [SerializeField] Camera mainCamera;
-        
+
         [Tooltip("RenderTextureをmainCameraへBlitするタイミング。※BeforeForwardOpaqueから変更する必要は無い")]
         [SerializeField] CameraEvent mCameraEvent = CameraEvent.BeforeForwardOpaque;
 
         // RenderTextureのフィルターモード
-        internal FilterMode mFilterMode = FilterMode.Point;
+        [SerializeField][HideInInspector] FilterMode mFilterMode = FilterMode.Point;
 
         // オリジナルの解像度に対して何ビットシフトさせるか
-        internal int mShift = 0;
+        [SerializeField][HideInInspector] int mShift;
 
         // mShiftに変更があったかどうか
         internal bool mIsDirty = false;
 
-        
         public FilterMode filterMode
         {
             get { return mFilterMode; }
-            set 
-            { 
+            set
+            {
                 mFilterMode = value;
                 mIsDirty = true;
             }
@@ -71,7 +72,7 @@ namespace UTJ.RenderTextureCamera
         // Start is called before the first frame update
         void Start()
         {
-            if(renderTextureCamera == null)
+            if (renderTextureCamera == null)
             {
                 renderTextureCamera = GetComponent<Camera>();
             }
@@ -94,7 +95,7 @@ namespace UTJ.RenderTextureCamera
 
 
         private void Update()
-        {
+        {            
             if (mIsDirty)
             {
                 CreateRenderTexture();
@@ -124,7 +125,7 @@ namespace UTJ.RenderTextureCamera
             renderTexture.useMipMap = false;
             renderTexture.filterMode = mFilterMode;
             renderTexture.useDynamicScale = renderTextureCamera.allowDynamicResolution;
-            renderTexture.Create();         
+            renderTexture.Create();
         }
 
 
