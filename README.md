@@ -30,7 +30,7 @@ Dynamic Resolutionの使用サンプルは[こちら](https://github.com/katsuma
 
 ### ヒント
 
-既に3Dオブジェクトと2DオブジェクトでCameraが別れているプロジェクトで3Dのレンダリング解像度を下げたい場合、3Dオブジェクト用のCameraにRenderTextureCamera ComponentをADDし、`renderTextureCamera`プロパティへ3Dオブジェクトのレンダリング用Camera、`blitCameraプロパティへ2Dオブジェクトレンダリング用のCameraを設定します。
+既に3Dオブジェクトと2DオブジェクトでCameraが分かれているプロジェクトで3Dのレンダリング解像度を下げたい場合、3Dオブジェクト用のCameraにRenderTextureCamera ComponentをADDし、`renderTextureCamera`プロパティへ3Dオブジェクトのレンダリング用Camera、`blitCamera`プロパティへ2Dオブジェクトレンダリング用のCameraを設定します。
 
 ## プロパティ
 
@@ -41,12 +41,12 @@ Dynamic Resolutionの使用サンプルは[こちら](https://github.com/katsuma
 
 ### blitCamera
 
-renderTextureCameraの上にレンダリングを行うカメラを指定します。
+renderTextureCameraの上にそのままのレンダリング解像度で描画したいカメラを指定します。
 UIなど2Dをレンダリングするカメラを想定しています。
 
 ### cameraEvent
 
-renderTextureCameraでレンダリングした内容をmainCameraへBlitするタイミングを指定します。
+renderTextureCameraでレンダリングした内容をmasterCameraへBlitするタイミングを指定します。
 基本的に`Before Forward Opaque`から変更する必要はありません。
 
 ### shift
