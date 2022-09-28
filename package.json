@@ -1,8 +1,8 @@
 {
   "name": "com.utj.rendertexturecamera",
   "displayName": "RenderTextureCamera",
-  "version": "0.1.0",
-  "unity": "201.1",
+  "version": "0.1.1",
+  "unity": "2017.1",
   "keywords": [
     "unity",
     "camera",
